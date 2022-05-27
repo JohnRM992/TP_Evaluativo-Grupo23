@@ -9,7 +9,14 @@
 #navbar{
 	background-color: #CDC2AE;
 	border-bottom: 2px #354259 solid;
+	color: #fff;
+	text-decoration: none;
 }
+
 #footer{
 	background-color: #354259;
+}
+#cards{
+	background-color: #354259;
+	color: #fff;
 }

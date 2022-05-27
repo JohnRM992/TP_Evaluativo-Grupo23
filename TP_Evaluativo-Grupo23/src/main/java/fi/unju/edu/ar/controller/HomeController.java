@@ -16,5 +16,10 @@ public class HomeController {
 		return "index";
 	}
 	
+	@GetMapping("/registro")
+	public String getRegistroPage(Model model) 
+	{
+		return "registro";
+	}
 
 }

@@ -17,14 +17,13 @@ public class ListaCandidatos {
 		
 		candidatos.add(new Candidato(1,0,"Metallica","Rock/Metal","Metallica es una banda estadounidense de thrash metal​ originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983"));
 		
-		
-		public ArrayList<Candidato>getCandidatos(){
-			return candidatos;
-		}
-		
-		public void setCandidatos(ArrayList<Candidato> candidatos) {
-			this.candidatos = candidatos;
-		}
+	}
+	public ArrayList<Candidato> getCandidatos(){
+		return candidatos;
+	}
+	
+	public void setCandidatos(ArrayList<Candidato> candidatos) {
+		this.candidatos = candidatos;
 	}
 
 }

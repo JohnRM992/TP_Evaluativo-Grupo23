@@ -22,10 +22,5 @@ public class HomeController {
 		return "registro";
 	}
 	
-	@GetMapping("/candidatos")
-	public String getCandidatosPage(Model model) 
-	{
-		return "candidatos";
-	}
-
+	
 }

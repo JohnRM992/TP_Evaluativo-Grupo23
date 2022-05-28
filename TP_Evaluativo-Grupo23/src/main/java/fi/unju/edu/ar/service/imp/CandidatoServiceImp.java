@@ -45,7 +45,8 @@ public class CandidatoServiceImp implements ICandidatoService{
 			
 		}
 		
-		@Override ListaCandidatos getListaCandidatos() {
+		@Override 
+		public ListaCandidatos getListaCandidatos() {
 			// retornar el objeto que accede a la lista de candidatos
 			return listaCandidatos;
 		}

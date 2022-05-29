@@ -22,10 +22,10 @@ public class HomeController {
 		return "registro";
 	}
 	
-	@GetMapping("/candidatos")
+	@GetMapping("/votacion")
 	public String getCandidatosPage(Model model) 
 	{
-		return "candidatos";
+		return "votacion";
 	}
 	
 	

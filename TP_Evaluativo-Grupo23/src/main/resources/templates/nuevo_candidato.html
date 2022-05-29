@@ -9,7 +9,9 @@
 	
 	<body>
 		<header th:replace="/layouts/header :: header"></header>
-		<div class="container col-4">
+		
+		<div class="container-fluid" id="cuerpo">
+					<div class="container col-4">
 			<br>
 			<p class="h4">Registro de Candidatos</p>
 			<br>
@@ -22,9 +24,15 @@
 					<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
 				</div>
 				<div class="mb-3">
+					<label for="votosId" class="form-label">Votos</label> 
+					<input  th:field="*{votos}" type="number" class="form-control" id="votosId" placeholder="Ingrese la cantidad de votos">
+					
+					<div class="text-danger" th:if="${#fields.hasErrors('votos')}" th:errors="*{votos}"></div>
+				</div>
+				<div class="mb-3">
 					<label for="nombre_ArBandId" class="form-label">Nombre de la banda o artista</label> 
-					<input  th:field="*{nombre_ArBandId}" type="text" class="form-control" id="nombre_ArBandIdId" placeholder="Ingresar aqui el nombre de banda o artista">
-					<div class="text-danger" th:if="${#fields.hasErrors('nombre_ArBandId')}" th:errors="*{nombre_ArBandId}"></div>
+					<input  th:field="*{nombre_ArBand}" type="text" class="form-control" id="nombre_ArBandIdId" placeholder="Ingresar aqui el nombre de banda o artista">
+					<div class="text-danger" th:if="${#fields.hasErrors('nombre_ArBand')}" th:errors="*{nombre_ArBand}"></div>
 				</div>
 				<div class="mb-3">
 					<label for="genero_musicalId" class="form-label">Genero</label> 
@@ -36,14 +44,15 @@
 					<input  th:field="*{descripcion}" type="text" class="form-control" id="descripcionId" placeholder="Ingrese una breve descripcion ">
 					<div class="text-danger" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
 				</div>
-				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-					<button class="btn btn-primary me-md-2" type="submit">Enviar</button>
-					 <a th:href="@{/inicio}" id="cancel" class="btn btn-secondary">Cancelar</a>
+				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+					<button class="btn btn-warning me-md-2 mb-3" type="submit">Enviar</button>
+					 <a th:href="@{/candidatos/listaCandidatos}" id="cancel" class="btn btn-secondary mb-3">Cancelar</a>
 	  				
 				</div>
 			</form>
 		</div>
-		<br><br>
+		
+		</div>
 		<footer th:replace="/layouts/footer :: footer"></footer>
 		<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
 		<script type="text/javascript" th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>

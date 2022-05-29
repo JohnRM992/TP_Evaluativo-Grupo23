@@ -13,31 +13,31 @@ import java.time.LocalDate;
 public class Usuario {
 	
 	@NotBlank(message="El campo del nombre de usuario no puede quedar en blanco")
-	private String nombre;
+	private String name;
 	@NotEmpty @Email
 	private String email;
-	private LocalDate fecha_nacimiento;
-	
-	
+	private LocalDate dateOfBirth;
+
+
 	//Constructores
 	public Usuario() {
 		super();
 	}
 	
-	public Usuario(String nombre, String email, LocalDate fecha_nacimiento) {
+	public Usuario(String name, String email, LocalDate dateOfBirth) {
 		super();
-		this.nombre = nombre;
+		this.name = name;
 		this.email = email;
-		this.fecha_nacimiento = fecha_nacimiento;
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	//Getters Setters
-	public String getNombre() {
-		return nombre;
+	public String getName() {
+		return name;
 	}
 	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getEmail() {
 		return email;
@@ -45,15 +45,24 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public LocalDate getFecha_nacimiento() {
-		return fecha_nacimiento;
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
 	}
-	public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "Usuario [name=" + name + ", email=" + email + ", dateOfBirth=" + dateOfBirth + "]";
+	}
+	public static int getAge(LocalDate dateOfBirth) {
+		return LocalDate.now().getYear() - dateOfBirth.getYear();
+	}
 	
 	
 	
 
 }
+

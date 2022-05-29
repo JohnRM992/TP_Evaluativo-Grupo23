@@ -15,7 +15,8 @@ public class ListaCandidatos {
 		candidatos = new ArrayList<Candidato>();
 		//candidato por defecto??
 		
-		candidatos.add(new Candidato(1,0,"Metallica","Rock/Metal","Metallica es una banda estadounidense de thrash metal​ originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983"));
+		candidatos.add(new Candidato(1,1,"Metallica","Rock/Metal","Metallica es una banda estadounidense de thrash metal​ originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983"));
+		candidatos.add(new Candidato(2,5,"AISDUHASIDU","Rock/Metal","ASIDHASI es una banda estadounidense de thrash metal​ originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983"));
 		
 	}
 	public ArrayList<Candidato> getCandidatos(){

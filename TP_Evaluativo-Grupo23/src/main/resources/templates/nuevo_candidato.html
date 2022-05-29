@@ -14,7 +14,7 @@
 			<p class="h4">Registro de Candidatos</p>
 			<br>
 	
-			<form th:action="@{/alumno/guardar}" method="POST" th:object="${alumno}">
+			<form th:action="@{/candidatos/guardar}" method="POST" th:object="${candidato}">
 				<div class="mb-3">
 					<label for="codigoId" class="form-label">Codigo</label> 
 					<input  th:field="*{codigo}" type="number" class="form-control" id="codigoId" placeholder="Ingresar el codigo">

@@ -18,13 +18,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import fi.unju.edu.ar.model.Candidato;
 import fi.unju.edu.ar.service.ICandidatoService;
+import fi.unju.edu.ar.util.ListaCandidatos;
 
 @Controller
 @RequestMapping("/candidatos")
 public class CandidatoController {
 	
-//	@Autowired
-//	@Qualifier("ICandidatoServiceImpList")
+	@Autowired
+//	@Qualifier("ICandidatoServiceImp")
 	private ICandidatoService candidatoService;
 	
 	private static final Log LOGGER = LogFactory.getLog(CandidatoController.class);
@@ -32,7 +33,7 @@ public class CandidatoController {
 	@GetMapping("/nuevo")
 	public String getFormNuevoCandidatoPage(Model model) {
 		
-				model.addAttribute("candidato", candidatoService.getCandidato());
+				model.addAttribute("candidato", candidatoService.getCandidatos());
 						
 						return "nuevo_candidato";
 	}
@@ -48,7 +49,7 @@ public class CandidatoController {
 			mav.addObject("candidato", candidato);
 			return mav;
 		}
-		ModelAndView mav = new ModelAndView("redirect:/alumno/listaAlumnos");
+		ModelAndView mav = new ModelAndView("redirect:/candidatos/listaCandidatos");
 		
 		//Se agrega objeto candidato a la lista
 		if(candidatoService.guardarCandidato(candidato)) {
@@ -84,6 +85,14 @@ public class CandidatoController {
 		ModelAndView mav = new ModelAndView("editar_candidato");
 		Candidato candidato= candidatoService.buscarCandidato(codigo);
 		mav.addObject("candidato", candidato);
+		return mav;
+		
+	}
+	
+	@GetMapping("/eliminar/{codigo}")
+	public ModelAndView eliminarCodigo(@PathVariable("codigo")int codigo) {
+		ModelAndView mav = new ModelAndView("redirect:/candidatos/listaCandidatos");
+		
 		return mav;
 		
 	}

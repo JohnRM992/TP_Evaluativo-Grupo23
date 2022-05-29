@@ -9,14 +9,14 @@ import fi.unju.edu.ar.model.Candidato;
 import fi.unju.edu.ar.service.ICandidatoService;
 import fi.unju.edu.ar.util.ListaCandidatos;
 
-@Service("CandidatoServiceImpList")
+@Service("CandidatoServiceImp")
 public class CandidatoServiceImp implements ICandidatoService{
 	
 		@Autowired
 		private ListaCandidatos listaCandidatos;
 		
 		@Override
-		public Candidato getCandidato() {
+		public Candidato getCandidatos() {
 			// retornar objeto de clase Candidato
 			return new Candidato();
 		}

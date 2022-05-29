@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-@RequestMapping("/")
+
 @Controller
 public class HomeController {
 	
@@ -23,10 +23,12 @@ public class HomeController {
 	}
 	
 	@GetMapping("/votacion")
-	public String getCandidatosPage(Model model) 
+	public String getVotacionsPage(Model model) 
 	{
 		return "votacion";
 	}
+	
+	
 	
 	
 }

@@ -4,6 +4,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import fi.unju.edu.ar.model.Candidato;
 import fi.unju.edu.ar.service.ICandidatoService;
 import fi.unju.edu.ar.util.ListaCandidatos;
@@ -49,5 +50,12 @@ public class CandidatoServiceImp implements ICandidatoService{
 		public ListaCandidatos getListaCandidatos() {
 			// retornar el objeto que accede a la lista de candidatos
 			return listaCandidatos;
+		}
+		
+		@Override
+		public Candidato buscarCandidato(int codigo) {
+			//Buscar un candidato por el codigo y devolverlo
+			Optional<Candidato> candidato= listaCandidatos.getCandidatos().stream().filter(a -> a.getCodigo() == codigo).findFirst();
+			return candidato.get();
 		}
 }

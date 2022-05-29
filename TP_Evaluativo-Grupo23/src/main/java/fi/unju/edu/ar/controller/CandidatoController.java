@@ -78,5 +78,14 @@ public class CandidatoController {
 		return mav;
 		
 	}
+	
+	@GetMapping("/editar/{codigo}")
+	public ModelAndView getEditarCandidatoPage(@PathVariable(value="codigo")int codigo) {
+		ModelAndView mav = new ModelAndView("editar_candidato");
+		Candidato candidato= candidatoService.buscarCandidato(codigo);
+		mav.addObject("candidato", candidato);
+		return mav;
+		
+	}
 
 }

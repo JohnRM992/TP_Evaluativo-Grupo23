@@ -39,6 +39,11 @@
 					<input  th:field="*{genero_musical}" type="text" class="form-control" id="genero_musicalId">
 					<div class="text-danger" th:if="${#fields.hasErrors('votos')}" th:errors="*{genero_musical}"></div>
 				</div>
+				<div class="mb-3">
+					<label for="descripcionId" class="form-label">Descripcion</label> 
+					<input  th:field="*{descripcion}" type="text" class="form-control" id="descripcionId">
+					<div class="text-danger" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
+				</div>
 				
 				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
 					<button class="btn btn-warning me-md-2 mb-3" type="submit">Editar</button>

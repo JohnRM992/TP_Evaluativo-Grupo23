@@ -2,10 +2,12 @@ package fi.unju.edu.ar.model;
 
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+//import javax.validation.constraints.Min;
+//import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 
@@ -16,6 +18,7 @@ public class Usuario {
 	private String name;
 	@NotEmpty @Email
 	private String email;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dateOfBirth;
 
 

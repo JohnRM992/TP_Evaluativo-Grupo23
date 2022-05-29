@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
-		<title>Alta Candidatos</title>
+		<title>Alta Usuario</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
 		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 	</head>
@@ -16,7 +16,7 @@
 			<p class="h4">Formulario de Registro</p>
 			<br>
 	
-			<form th:action="@{/nuevo/guardar}" method="POST" th:object="${usuario}">
+			<form th:action="@{/guardar}" method="POST" th:object="${usuario}">
 				
 					
 				<div class="mb-3">
@@ -36,7 +36,7 @@
 				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
 					<button class="btn btn-warning me-md-2 mb-3" type="submit">Enviar</button>
-					 <a th:href="@{/candidatos/listaCandidatos}" id="cancel" class="btn btn-secondary mb-3">Cancelar</a>
+					 <a th:href="@{/inicio}" id="cancel" class="btn btn-secondary mb-3">Cancelar</a>
 	  				
 				</div>
 			</form>

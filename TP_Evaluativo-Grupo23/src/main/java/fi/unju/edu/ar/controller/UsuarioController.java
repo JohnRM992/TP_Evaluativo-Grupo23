@@ -28,7 +28,7 @@ public class UsuarioController {
 //	@Qualifier("ICandidatoServiceImp")
 	private IUsuarioService usuarioService;
 	
-	private static final Log LOGGER = LogFactory.getLog(CandidatoController.class);
+	private static final Log LOGGER = LogFactory.getLog(UsuarioController.class);
 	
 	@GetMapping("/nuevo")
 	public String getFormNuevoCandidatoPage(Model model) {
@@ -46,14 +46,14 @@ public class UsuarioController {
 
 		if(bindingResult.hasErrors()) {
 			ModelAndView mav = new ModelAndView("nuevo_usuario");
-			mav.addObject("candidato", usuario);
+			mav.addObject("usuario", usuario);
 			return mav;
 		}
 		ModelAndView mav = new ModelAndView("redirect:/inicio");
 		
 		//Se agrega objeto usuario a la lista
 		if(usuarioService.guardarUsuario(usuario)) {
-			LOGGER.info("Se agregó un objeto al array de los candidatos");
+			LOGGER.info("Se agregó un nuevo usuario");
 		}
 		return mav;
 	}

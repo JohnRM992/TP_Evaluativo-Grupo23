@@ -23,8 +23,8 @@ import fi.unju.edu.ar.service.ICandidatoService;
 @RequestMapping("/candidatos")
 public class CandidatoController {
 	
-	@Autowired
-	@Qualifier("ICandidatoServiceImp")
+//	@Autowired
+//	@Qualifier("ICandidatoServiceImpList")
 	private ICandidatoService candidatoService;
 	
 	private static final Log LOGGER = LogFactory.getLog(CandidatoController.class);
@@ -41,7 +41,7 @@ public class CandidatoController {
 	public ModelAndView getListaCandidatosPage(@Validated @ModelAttribute("candidato")Candidato candidato,
 			BindingResult bindingResult) {
 	
-		//el objeto bindingResult contiene el resultado de la validación,los errores 
+//		el objeto bindingResult contiene el resultado de la validación,los errores 
 
 		if(bindingResult.hasErrors()) {
 			ModelAndView mav = new ModelAndView("nuevo_candidato");

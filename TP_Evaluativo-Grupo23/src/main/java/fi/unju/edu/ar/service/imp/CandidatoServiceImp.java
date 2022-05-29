@@ -11,6 +11,7 @@ import fi.unju.edu.ar.util.ListaCandidatos;
 
 @Service("CandidatoServiceImpList")
 public class CandidatoServiceImp implements ICandidatoService{
+	
 		@Autowired
 		private ListaCandidatos listaCandidatos;
 		

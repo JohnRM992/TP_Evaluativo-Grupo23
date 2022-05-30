@@ -98,11 +98,21 @@ public class CandidatoController {
 	}
 	
 	@GetMapping("/eliminar/{codigo}")
-	public ModelAndView eliminarCodigo(@PathVariable("codigo")int codigo) {
-		ModelAndView mav = new ModelAndView("redirect:/candidatos/listaCandidatos");
-		
+	public ModelAndView getEliminarCandidatoPage(@PathVariable(value="codigo")int codigo) {
+		ModelAndView mav = new ModelAndView("eliminar_candidato");
+		Candidato candidato= candidatoService.buscarCandidato(codigo);
+		mav.addObject("candidato", candidato);
 		return mav;
 		
 	}
-
+	
+	@PostMapping("/eliminar/{codigo}")
+	public String getEliminarPage(@PathVariable(value="codigo")int codigo) {
+		
+		candidatoService.eliminarCandidato(codigo);
+		
+		return "redirect:/listaCandidatos";
+		
+	}
+	
 }

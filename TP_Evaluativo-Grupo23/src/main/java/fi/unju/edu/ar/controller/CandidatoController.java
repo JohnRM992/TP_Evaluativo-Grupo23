@@ -97,22 +97,29 @@ public class CandidatoController {
 		
 	}
 	
-	@GetMapping("/eliminar/{codigo}")
-	public ModelAndView getEliminarCandidatoPage(@PathVariable(value="codigo")int codigo) {
-		ModelAndView mav = new ModelAndView("eliminar_candidato");
-		Candidato candidato= candidatoService.buscarCandidato(codigo);
-		mav.addObject("candidato", candidato);
+	@GetMapping("/eliminar/{dni}")
+	public ModelAndView eliminarCandidato(@PathVariable("dni")int dni) {
+		
+		ModelAndView mav = new ModelAndView("redirect:/candidatos/listaCandidatos");		
+		try {
+			candidatoService.eliminarCandidato(dni);
+		} catch (Exception e) {
+			// TODO: handle exception
+			
+		}
+		
 		return mav;
 		
 	}
 	
-	@PostMapping("/eliminar/{codigo}")
-	public String getEliminarPage(@PathVariable(value="codigo")int codigo) {
-		
-		candidatoService.eliminarCandidato(codigo);
-		
-		return "redirect:/listaCandidatos";
-		
-	}
+	
+//	@PostMapping("/eliminar/{codigo}")
+//	public String getEliminarPage(@PathVariable(value="codigo")int codigo) {
+//		
+//		candidatoService.eliminarCandidato(codigo);
+//		
+//		return "redirect:/listaCandidatos";
+//		
+//	}
 	
 }

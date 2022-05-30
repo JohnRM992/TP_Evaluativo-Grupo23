@@ -4,7 +4,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import ar.edu.unju.fi.html.model.Alumno;
 import fi.unju.edu.ar.model.Candidato;
 import fi.unju.edu.ar.service.ICandidatoService;
 import fi.unju.edu.ar.util.ListaCandidatos;
@@ -44,8 +44,19 @@ public class CandidatoServiceImp implements ICandidatoService{
 		@Override
 		public void eliminarCandidato(int codigo) {
 		
-//			Optional<Candidato> candidato= listaCandidatos.getCandidatos().stream().filter(a -> a.getCodigo() == codigo).findFirst();
-			listaCandidatos.getCandidatos().remove(codigo);
+			int i = 0;
+			// TODO Auto-generated method stub
+			for(Candidato candi : listaCandidatos.getCandidatos()) {
+				i=i++;
+				if(candi.getCodigo() == codigo) {
+					int pos=i;
+					listaCandidatos.getCandidatos().remove(pos);
+					
+					break;
+					
+				}
+				i++;
+			}
 			
 			
 		}

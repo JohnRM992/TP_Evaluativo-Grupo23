@@ -22,12 +22,13 @@ public class HomeController {
 		return "registro";
 	}
 	
-	@GetMapping("/votacion")
-	public String getVotacionsPage(Model model) 
+	@GetMapping("/agradecimiento")
+	public String getAgradecimientoPage(Model model) 
 	{
-		return "votacion";
+		return "agradecimiento";
 	}
 	
+
 	
 	
 	

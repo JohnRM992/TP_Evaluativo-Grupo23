@@ -13,7 +13,6 @@ public class Candidato {
 	
 	@Min(value=1,message="El codigo debe ser mayor o igual a 1")
 	private int codigo;
-	@Min(value=1,message="El codigo debe ser mayor o igual a 1")
 	private int votos;
 	@NotBlank(message="El nombre de la banda o artista no puede estar en blanco)")
 	private String  nombre_ArBand;

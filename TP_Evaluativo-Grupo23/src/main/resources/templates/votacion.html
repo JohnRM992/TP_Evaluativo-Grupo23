@@ -18,40 +18,20 @@
 	<div class="container-fluid" >
 		<div class="row vh-100">
 			<section  id="cuerpo" >
-											<div class="row row-cols-1 row-cols-md-3 g-4 m-3 ">
-					  <div class="col">
+											<div th:each="candidato: ${candidatos}" class="row row-cols-1 row-cols-md-3 g-4 m-3 ">
+					 <div class="col">
 					    <div class="card h-100text-light" id="cards">
 					      <img src="..." class="card-img-top" alt="...">
 					      <div class="card-body">
-					        <h5 class="card-title">Candidato1</h5>
-					        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					        <button class="btn btn-primary offset-5">Votar</button>
+					        <p class="card-title" th:text="${candidato.nombre_ArBand}"></>
+<!-- 					        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p> -->
+<!-- 					        <button class="btn btn-primary offset-5">Votar</button> -->
 					      </div>
 					  
 					    </div>
 					  </div>
-					  <div class="col">
-					    <div class="card h-100" id="cards">
-					      <img src="..." class="card-img-top" alt="...">
-					      <div class="card-body">
-					        <h5 class="card-title">Candidato 2</h5>
-					        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					        <button class="btn btn-primary offset-5">Votar</button>
-					      </div>
-					      
-					    </div>
-					  </div>
-					  <div class="col">
-					    <div class="card h-100" id="cards">
-					      <img src="..." class="card-img-top" alt="...">
-					      <div class="card-body">
-					        <h5 class="card-title">Candidato 3</h5>
-					        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					        <button class="btn btn-primary offset-5">Votar</button>
-					      </div>
-					      
-					    </div>
-					  </div>
+					
+				
 					</div>
 			</section>
 					</div>

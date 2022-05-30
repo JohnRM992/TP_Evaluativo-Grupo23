@@ -30,6 +30,14 @@ public class CandidatoController {
 	
 	private static final Log LOGGER = LogFactory.getLog(CandidatoController.class);
 	
+	@GetMapping("/estado_votacion")
+	public ModelAndView getEstadoVotacionPage() {
+		ModelAndView mav = new ModelAndView("estado_votacion");
+		mav.addObject("candidatos",candidatoService.getListaCandidatos().getCandidatos());
+		return mav;
+	}
+	
+	
 	@GetMapping("/nuevo")
 	public String getFormNuevoCandidatoPage(Model model) {
 		

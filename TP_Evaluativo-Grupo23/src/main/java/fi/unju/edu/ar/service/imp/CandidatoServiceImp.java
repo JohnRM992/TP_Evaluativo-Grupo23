@@ -4,7 +4,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unju.fi.html.model.Alumno;
 import fi.unju.edu.ar.model.Candidato;
 import fi.unju.edu.ar.service.ICandidatoService;
 import fi.unju.edu.ar.util.ListaCandidatos;

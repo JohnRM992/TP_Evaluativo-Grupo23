@@ -16,16 +16,23 @@ public class HomeController {
 		return "index";
 	}
 	
+	@GetMapping("/listaVotacion")
+	public String getVotacion(Model model) {
+		
+		return "votacion";
+	}
+	
 	@GetMapping("/registro")
 	public String getRegistroPage(Model model) 
 	{
 		return "registro";
 	}
 	
-	@GetMapping("/agradecimiento")
-	public String getAgradecimientoPage(Model model) 
+	
+	@GetMapping("/estado_usuarios")
+	public String getEstadoUsuarioPage(Model model) 
 	{
-		return "agradecimiento";
+		return "estado_usuario";
 	}
 	
 

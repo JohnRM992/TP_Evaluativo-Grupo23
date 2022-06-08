@@ -3,7 +3,7 @@ package fi.unju.edu.ar.controller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,16 +12,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.servlet.ModelAndView;
 
 
 import fi.unju.edu.ar.model.Usuario;
 import fi.unju.edu.ar.service.IUsuarioService;
-import fi.unju.edu.ar.util.ListaUsuarios;
+
 
 @Controller
-
 public class UsuarioController {
 	
 	@Autowired
@@ -60,7 +59,7 @@ public class UsuarioController {
 	
 	@GetMapping("/listaUsuarios")
 	public ModelAndView getListaCandidatosPage() {
-		ModelAndView mav = new ModelAndView("lista_usuarios");
+		ModelAndView mav = new ModelAndView("estado_usuario");
 		mav.addObject("usuarios",usuarioService.getListaUsuarios().getUsuarios());
 		return mav;
 	}

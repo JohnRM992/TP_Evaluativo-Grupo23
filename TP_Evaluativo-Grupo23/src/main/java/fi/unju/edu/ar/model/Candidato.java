@@ -21,11 +21,6 @@ public class Candidato {
 	@NotBlank(message="La descripcion no puede quedar en blanco")
 	private String descripcion;
 	
-	
-	
-	
-	
-	
 	//Constructores
 	
 	public Candidato() {

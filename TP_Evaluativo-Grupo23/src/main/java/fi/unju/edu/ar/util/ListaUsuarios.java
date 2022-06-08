@@ -13,9 +13,8 @@ private ArrayList<Usuario> usuarios;
 	public ListaUsuarios() {
 		//creacion ArrayList
 		usuarios = new ArrayList<Usuario>();
-		//
-		
-		
+		//Usuarios precargados
+		//usuarios.add(new Usuario("Ruru","Ruruuuu@fmai.com",LocalDate.now()));
 		
 	}
 	public ArrayList<Usuario> getUsuarios(){

@@ -3,7 +3,6 @@ package fi.unju.edu.ar.controller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import fi.unju.edu.ar.model.Candidato;
 import fi.unju.edu.ar.service.ICandidatoService;
-import fi.unju.edu.ar.util.ListaCandidatos;
+
 
 @Controller
 @RequestMapping("/candidatos")
@@ -69,6 +68,13 @@ public class CandidatoController {
 	@GetMapping("/listaCandidatos")
 	public ModelAndView getListaCandidatosPage() {
 		ModelAndView mav = new ModelAndView("lista_candidatos");
+		mav.addObject("candidatos",candidatoService.getListaCandidatos().getCandidatos());
+		return mav;
+	}
+	
+	@GetMapping("/listaVotacion")
+	public ModelAndView getListaVotacionPage() {
+		ModelAndView mav = new ModelAndView("votacion");
 		mav.addObject("candidatos",candidatoService.getListaCandidatos().getCandidatos());
 		return mav;
 	}

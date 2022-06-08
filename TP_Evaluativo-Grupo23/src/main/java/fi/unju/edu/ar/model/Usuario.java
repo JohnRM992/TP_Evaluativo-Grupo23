@@ -58,13 +58,11 @@ public class Usuario {
 	
 	@Override
 	public String toString() {
-		return "Usuario [name=" + name + ", email=" + email + ", dateOfBirth=" + dateOfBirth + "]";
+		return "Usuario [name=" + name + ", email=" + email + "]";
 	}
 	public static int getAge(LocalDate dateOfBirth) {
 		return LocalDate.now().getYear() - dateOfBirth.getYear();
 	}
-	
-	
 	
 
 }

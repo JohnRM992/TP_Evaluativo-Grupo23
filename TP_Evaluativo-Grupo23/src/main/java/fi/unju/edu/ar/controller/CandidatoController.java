@@ -72,12 +72,7 @@ public class CandidatoController {
 		return mav;
 	}
 	
-	@GetMapping("/listaVotacion")
-	public ModelAndView getListaVotacionPage() {
-		ModelAndView mav = new ModelAndView("votacion");
-		mav.addObject("candidatos",candidatoService.getListaCandidatos().getCandidatos());
-		return mav;
-	}
+	
 	
 	@PostMapping("/modificar")
 	public ModelAndView editarDatosCandidato(@Validated @ModelAttribute("candidato") Candidato candidato, BindingResult bindingResult ) {

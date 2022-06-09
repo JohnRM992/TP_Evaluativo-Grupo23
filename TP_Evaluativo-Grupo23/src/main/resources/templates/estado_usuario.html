@@ -21,15 +21,15 @@
 							<th>Nombre</th>
 							<th>Email</th>
 							<th>Fecha de Nacimiento</th>
+							<th>Edad</th>
 							
-							<th></th>
 							
 						</tr>	
 						<tr th:each="usuario: ${usuarios}">
 							<td th:text="${usuario.name}"></td>
 							<td th:text="${usuario.email}"></td>
 							<td th:text="${usuario.dateOfBirth}"></td>
-							
+							<td th:text="${usuario.edad}"></td>
 						</tr>
 					</table>
 				<br><br>

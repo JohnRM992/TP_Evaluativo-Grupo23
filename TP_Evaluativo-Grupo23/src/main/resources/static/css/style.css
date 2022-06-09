@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
-#cuerpo{
-	background-color: #ECE5C7;
+.main{
+	background-image: url("../images/fondo2.jpg"); 
+	
 }
 #header{
 	background-color: #354259;
@@ -21,6 +22,23 @@
 	color: #fff;
 }
 
+.boton{
+	padding-top: 300px;
+	width: 400px;
+	height: 150px;
+	font-size: 2.3em;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.btn{
+	background-color: #16c4e9;
+	font-size: 1em;
+	text-align: center;
+	border-radius: 10px;
+}
+
 img{
 	width: 100%;
+	
 }

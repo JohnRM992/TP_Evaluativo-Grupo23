@@ -10,6 +10,8 @@ import javax.validation.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 @Component
 public class Usuario {
@@ -20,18 +22,33 @@ public class Usuario {
 	private String email;
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dateOfBirth;
+	private int edad;
+	
+//	public int Edad() {
+//		
+//		LocalDate ahora = LocalDate.now();
+//
+//		Period periodo = Period.between(dateOfBirth, ahora);
+//		int edad = periodo.getYears();
+//		System.out.println(edad);
+//		return edad;
+//	}
 
-
+	
+	
+	
+	
 	//Constructores
 	public Usuario() {
 		super();
 	}
 	
-	public Usuario(String name, String email, LocalDate dateOfBirth) {
+	public Usuario(String name, String email, LocalDate dateOfBirth, int edad) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.dateOfBirth = dateOfBirth;
+		this.edad = edad;
 	}
 
 	//Getters Setters
@@ -42,6 +59,22 @@ public class Usuario {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+	
+	public int getEdad() {
+		LocalDate ahora = LocalDate.now();
+
+		Period periodo = Period.between(dateOfBirth, ahora);
+		int edad = periodo.getYears();
+		System.out.println("Edad: " + edad);
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -60,10 +93,6 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [name=" + name + ", email=" + email + "]";
 	}
-	public static int getAge(LocalDate dateOfBirth) {
-		return LocalDate.now().getYear() - dateOfBirth.getYear();
-	}
 	
-
 }
 

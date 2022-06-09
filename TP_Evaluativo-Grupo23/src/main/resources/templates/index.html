@@ -10,15 +10,18 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 
-<body>
+<body class="main">
 	<header th:replace="/layouts/header::header"> </header>
 
 
 	<div class="container-fluid">
 		<div class="row vh-100">
-			<section id="cuerpo">
-				<img alt="fondo" src="/images/fondo2.jpg">
-			</section>
+			
+				<div class=" boton d-grid gap-2 col-5 mx-auto">
+					<a class="btn btn-primary btn-outline-primary" th:href="@{/nuevo}">Iniciar Votación</a>
+					
+				</div>		
+		
 		</div>
 
 	</div>

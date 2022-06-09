@@ -13,59 +13,40 @@
 <body>
 	<header th:replace="/layouts/header::header"> </header>
 
-
-	<div class="container my-5">
-		<h2>Artistas</h2>
-		
-		<table class="table table-hover">
-			<tr>
-							
+	<div class="container-fluid" id="cuerpo">
+			<br>
+			<p class="h4 mb-10">Candidatos</p>
+			<br>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+			   <a th:href="@{/candidatos/nuevo}" id="nuevo" class="btn btn-warning">Nuevo</a>
+			</div>
+			<br>
+			<div class="col-12 d-flex justify-content-center">
+				<table class="table table-dark table-striped table-hover">
+						<tr>
+							<th>Codigo</th>
+							<th>Votos</th>
 							<th>Nombre de banda o artista</th>
 							<th>Genero musical</th>
 							<th>Descripcion</th>
 							<th></th>
 							
-			</tr>
-		
-			<tr th:each="candidato: ${candidatos}">
+						</tr>	
+						<tr th:each="candidato: ${candidatos}">
+							<td th:text="${candidato.codigo}"></td>
+							<td th:text="${candidato.votos}"></td>
+							<td th:text="${candidato.nombre_ArBand}"></td>
+							<td th:text="${candidato.genero_musical}"></td>
+							<td th:text="${candidato.descripcion}"></td>
+							<td>
+							<a th:href="@{/candidatos/editar/}+${candidato.codigo}" id="editarCandidato" class="btn btn-warning mb-3">Editar</a>
+							<a th:href="@{/candidatos/eliminar/}+${candidato.codigo}" id="eliminarCandidato" class="btn btn-danger mb-3">Eliminar</a>
+							</td>
+						</tr>
+					</table>
+				<br><br>
 				
-				<td th:text="${candidato.nombre_ArBand}"></td>
-				<td th:text="${candidato.genero_musical}"></td>
-				<td th:text="${candidato.descripcion}"></td>
-			</tr>
-		</table>
-	</div>
-
-	<!-- 	<div class="card" style="width: 18rem;"> -->
-<!-- 		<img class="card-img-top" src="..." alt="Card image cap"> -->
-<!-- 		<div class="card-body"> -->
-<!-- 			<h5 class="card-title">Metalica</h5> -->
-<!-- 			<p class="card-text">Some quick example text to build on the card -->
-<!-- 				title and make up the bulk of the card's content.</p> -->
-<!-- 			<a href="#" class="btn btn-primary">Votar</a> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- 	<div class="card" style="width: 18rem;"> -->
-<!-- 		<img class="card-img-top" src="..." alt="Card image cap"> -->
-<!-- 		<div class="card-body"> -->
-<!-- 			<h5 class="card-title">Arjona</h5> -->
-<!-- 			<p class="card-text">Some quick example text to build on the card -->
-<!-- 				title and make up the bulk of the card's content.</p> -->
-<!-- 			<a href="#" class="btn btn-primary">Votar</a> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- 	<div class="card" style="width: 18rem;"> -->
-<!-- 		<img class="card-img-top" src="..." alt="Card image cap"> -->
-<!-- 		<div class="card-body"> -->
-<!-- 			<h5 class="card-title">Card title</h5> -->
-<!-- 			<p class="card-text">Some quick example text to build on the card -->
-<!-- 				title and make up the bulk of the card's content.</p> -->
-<!-- 			<a href="#" class="btn btn-primary">votar</a> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-
-
+			</div>
 	<footer th:replace="/layouts/footer :: footer"></footer>
 	<script type="text/javascript"
 		th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>

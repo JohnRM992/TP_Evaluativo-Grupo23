@@ -8,6 +8,7 @@ public interface ICandidatoService {
 	public ListaCandidatos getListaCandidatos();
 	public Candidato getCandidatos();
 	public boolean guardarCandidato(Candidato candidato);
+	public int contarVotos();
 	public void modificarCandidato(Candidato candidato);
 	public void eliminarCandidato(int codigo);
 

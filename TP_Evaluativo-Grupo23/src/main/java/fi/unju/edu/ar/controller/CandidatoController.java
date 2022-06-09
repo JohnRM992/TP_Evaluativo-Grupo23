@@ -73,9 +73,10 @@ public class CandidatoController {
 	}
 	
 	
-	
 	@PostMapping("/modificar")
 	public ModelAndView editarDatosCandidato(@Validated @ModelAttribute("candidato") Candidato candidato, BindingResult bindingResult ) {
+		
+		
 		if(bindingResult.hasErrors()) {
 			LOGGER.info("Ha ocurrido un error "+candidato);
 			ModelAndView mav = new ModelAndView("editar_candidato");

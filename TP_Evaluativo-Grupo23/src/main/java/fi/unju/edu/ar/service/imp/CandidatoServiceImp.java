@@ -75,4 +75,14 @@ public class CandidatoServiceImp implements ICandidatoService{
 			Optional<Candidato> candidato= listaCandidatos.getCandidatos().stream().filter(a -> a.getCodigo() == codigo).findFirst();
 			return candidato.get();
 		}
+	
+		public int contarVotos() {
+			
+			int contador=0;
+			for(Candidato candi : listaCandidatos.getCandidatos()) {
+				
+				contador=contador+candi.getVotos();	
+			}
+		return contador;	
+		}
 }

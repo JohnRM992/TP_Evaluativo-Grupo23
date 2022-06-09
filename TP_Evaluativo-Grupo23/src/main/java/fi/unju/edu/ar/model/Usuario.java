@@ -35,9 +35,6 @@ public class Usuario {
 //	}
 
 	
-	
-	
-	
 	//Constructores
 	public Usuario() {
 		super();

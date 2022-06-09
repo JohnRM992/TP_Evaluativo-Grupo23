@@ -40,8 +40,8 @@ public class UsuarioController {
 	@PostMapping("/guardar")
 	public ModelAndView getListaUsuariosPage(@Validated @ModelAttribute("usuario")Usuario usuario,
 			BindingResult bindingResult) {
-	
-//		el objeto bindingResult contiene el resultado de la validación,los errores 
+
+		// El objeto bindingResult contiene el resultado de la validación,los errores 
 
 		if(bindingResult.hasErrors()) {
 			ModelAndView mav = new ModelAndView("nuevo_usuario");

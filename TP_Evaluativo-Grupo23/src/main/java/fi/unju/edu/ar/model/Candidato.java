@@ -13,6 +13,7 @@ public class Candidato {
 	
 	@Min(value=1,message="El codigo debe ser mayor o igual a 1")
 	private int codigo;
+	@Min(value=0, message="La cantidad de votos debe ser un numero no negativo")
 	private int votos;
 	@NotBlank(message="El nombre de la banda o artista no puede estar en blanco)")
 	private String  nombre_ArBand;
@@ -35,7 +36,8 @@ public Candidato(int codigo, int votos, String nombre_ArBand, String genero_musi
 		this.genero_musical = genero_musical;
 		this.descripcion = descripcion;
 	}
-
+	
+	
 //	Getters y Setters
 	
 	public int getCodigo() {

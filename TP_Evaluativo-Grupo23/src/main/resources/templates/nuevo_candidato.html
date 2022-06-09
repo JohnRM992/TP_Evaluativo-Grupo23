@@ -19,7 +19,7 @@
 			<form th:action="@{/candidatos/guardar}" method="POST" th:object="${candidato}">
 				<div class="mb-3">
 					<label for="codigoId" class="form-label">Código</label> 
-					<input  th:field="*{codigo}" type="number" class="form-control" id="codigoId" placeholder="Ingresar el codigo">
+					<input  th:field="*{codigo}" type="number" value="3" class="form-control" id="codigoId" placeholder="Ingresar el codigo">
 					
 					<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
 				</div>

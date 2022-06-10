@@ -13,19 +13,16 @@
 <body class="main">
 	<header th:replace="/layouts/header::header"> </header>
 
+	<div class="content centered-elements">
+		<div>
 
-	<div class="container-fluid">
-		<div class="row vh-100">
+			<button class="btn btn--3"><a th:href="@{/nuevo}">Iniciar Votación</a></button>
 			
-				<div class=" boton d-grid gap-2 col-5 mx-auto">
-					<a class="btn btn-primary btn-outline-primary" th:href="@{/nuevo}">Iniciar Votación</a>
-					
-				</div>		
-		
-		</div>
 
+		</div>
 	</div>
 
+	
 	<footer th:replace="/layouts/footer :: footer"></footer>
 	<script type="text/javascript"
 		th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>

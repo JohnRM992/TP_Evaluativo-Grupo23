@@ -8,9 +8,9 @@
 </head>
 <body>
 <header th:replace="/layouts/header :: header"></header>
-<h1>Estado de los usuarios:</h1>
+<h1 class="mt-3">Estado de los usuarios:</h1>
 
-	<div class="container-fluid" id="cuerpo">
+	<div class="container-fluid vh-100" id="cuerpo">
 			<br>
 			<p class="h4 mb-10">Usuarios</p>
 			
@@ -28,7 +28,7 @@
 						<tr th:each="usuario: ${usuarios}">
 							<td th:text="${usuario.name}"></td>
 							<td th:text="${usuario.email}"></td>
-							<td th:text="${usuario.dateOfBirth}"></td>
+							<td th:text="${#temporals.format(usuario.dateOfBirth, 'dd-MMMM-yyyy')}"></td>
 							<td th:text="${usuario.edad}"></td>
 						</tr>
 					</table>
@@ -37,6 +37,6 @@
 			</div>
 		
 		</div>
-
+<footer th:replace="/layouts/footer :: footer"></footer>
 </body>
 </html>

@@ -130,6 +130,7 @@ public class CandidatoController {
 	public ModelAndView getVotarPage(@PathVariable(value = "codigo") int codigo) {
 		ModelAndView mav = new ModelAndView("votar_candidato");
 		Candidato candidato = candidatoService.buscarCandidato(codigo);
+		
 		mav.addObject("candidato", candidato);
 		return mav;
 

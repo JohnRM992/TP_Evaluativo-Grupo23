@@ -27,7 +27,7 @@
 				</div>
 				<div class="mb-3">
 					<label for="votosId" class="form-label">Votos</label> <input
-						th:field="*{votos}" type="text" class="form-control" id="votosId">
+						th:field="*{votos}" type="text" class="form-control" id="votosId" disabled="disabled">
 					<div class="text-danger" th:if="${#fields.hasErrors('votos')}"
 						th:errors="*{votos}"></div>
 				</div>

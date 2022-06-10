@@ -2,6 +2,7 @@ package fi.unju.edu.ar.model;
 
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 //import javax.validation.constraints.Min;
@@ -9,19 +10,27 @@ import javax.validation.constraints.NotEmpty;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
+
+
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 @Component
 public class Usuario {
 	
-	@NotBlank(message="El campo del nombre de usuario no puede quedar en blanco")
+	@NotBlank(message="El usuario no puede estar vacio")
 	private String name;
-	@NotEmpty @Email
+	@NotEmpty(message="El campo del correo no puede quedar vacio") @Email
 	private String email;
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dateOfBirth;
+//	 private Date dateParseado = Date.from(dateOfBirth);
+	 
+	 
 	private int edad;
 
 	

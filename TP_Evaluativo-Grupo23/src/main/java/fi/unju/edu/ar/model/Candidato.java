@@ -95,7 +95,6 @@ public Candidato(int codigo, int votos, String nombre_ArBand, String genero_musi
 //				i = i + getVotos();
 //				
 //				break;
-//				
 //			}
 //			
 //		}

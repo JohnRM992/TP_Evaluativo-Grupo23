@@ -6,7 +6,10 @@ import javax.validation.constraints.NotBlank;
 //import javax.validation.constraints.NotEmpty;
 //import javax.validation.constraints.Size;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import fi.unju.edu.ar.util.ListaCandidatos;
 
 @Component
 public class Candidato {
@@ -21,9 +24,18 @@ public class Candidato {
 	private String 	genero_musical;
 	@NotBlank(message="La descripcion no puede quedar en blanco")
 	private String descripcion;
+	private int totalVotos;
 	
+	
+	
+
+
+	@Autowired
+	private ListaCandidatos listaCandidatos;
 	//Constructores
 	
+
+
 	public Candidato() {
 		super();
 	}
@@ -35,6 +47,7 @@ public Candidato(int codigo, int votos, String nombre_ArBand, String genero_musi
 		this.nombre_ArBand = nombre_ArBand;
 		this.genero_musical = genero_musical;
 		this.descripcion = descripcion;
+		
 	}
 	
 	
@@ -50,7 +63,7 @@ public Candidato(int codigo, int votos, String nombre_ArBand, String genero_musi
 		return votos;
 	}
 	public void setVotos(int votos) {
-		this.votos = votos;
+		this.votos = votos + getVotos();
 	}
 	public String getNombre_ArBand() {
 		return nombre_ArBand;
@@ -71,6 +84,29 @@ public Candidato(int codigo, int votos, String nombre_ArBand, String genero_musi
 		this.descripcion = descripcion;
 	}
 	
+	public int getTotalVotos() {
+		
+//		int i = 0;
+//		
+//		for(Candidato candi : listaCandidatos.getCandidatos()) {
+//			
+//			if(candi.getVotos() >= listaCandidatos.getCandidatos().size() ) {
+//				
+//				i = i + getVotos();
+//				
+//				break;
+//				
+//			}
+//			
+//		}
+		return totalVotos + getVotos();
+	}
+
+	public void setTotalVotos(int totalVotos) {
+		
+		
+		this.totalVotos = totalVotos;
+	}
 	
 	@Override
 	public String toString() {

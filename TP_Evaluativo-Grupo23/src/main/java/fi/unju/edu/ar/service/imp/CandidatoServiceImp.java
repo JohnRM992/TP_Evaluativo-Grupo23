@@ -57,14 +57,17 @@ public class CandidatoServiceImp implements ICandidatoService{
 				i++;
 			}
 			
-			
 		}
 
-			
-		
 		
 		@Override 
 		public ListaCandidatos getListaCandidatos() {
+			// retornar el objeto que accede a la lista de candidatos
+			return listaCandidatos;
+		}
+		
+		@Override 
+		public ListaCandidatos getVotar() {
 			// retornar el objeto que accede a la lista de candidatos
 			return listaCandidatos;
 		}
@@ -83,6 +86,7 @@ public class CandidatoServiceImp implements ICandidatoService{
 				
 				contador=contador+candi.getVotos();	
 			}
+			System.out.println("contador: " + contador);
 		return contador;	
 		}
 }

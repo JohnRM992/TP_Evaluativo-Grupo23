@@ -23,7 +23,7 @@
 							<th>Codigo</th>
 							<th>Votos</th>
 							<th>Nombre de banda o artista</th>
-							<th>Porcentaje</th>
+							
 						</tr>	
 						
 						<tr th:each="candidato: ${candidatos}">
@@ -31,15 +31,18 @@
 								<td th:text="${candidato.votos}"></td>
 								<td th:text="${candidato.nombre_ArBand}"></td>
 								
-								<td></td>
 						</tr>
 						
+						
+					</table>
+					
+					<table class="table table-dark table-striped table-hover">
 						<tr>
 							<th>Total de votos</th>
 						</tr>
 						
-						<tr>
-							<td></td> 
+						<tr th:each="candidato: ${candidatos}">
+							<td th:text="${candidato.totalVotos}"></td>
 						</tr>
 					</table>
 				

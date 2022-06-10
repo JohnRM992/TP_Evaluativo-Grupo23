@@ -23,16 +23,6 @@ public class Usuario {
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dateOfBirth;
 	private int edad;
-	
-//	public int Edad() {
-//		
-//		LocalDate ahora = LocalDate.now();
-//
-//		Period periodo = Period.between(dateOfBirth, ahora);
-//		int edad = periodo.getYears();
-//		System.out.println(edad);
-//		return edad;
-//	}
 
 	
 	//Constructores

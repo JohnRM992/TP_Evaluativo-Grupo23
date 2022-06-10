@@ -11,7 +11,9 @@
 
 		<div class="container-fluid">
 			<div class="row p-2 text-white" id="header">
-				<h1 class="m-2 text-center">BIENVENIDO AL SITIO WEB DE VOTACIÓN</h1>
+			<h1 class="m-2 text-center">VOTÁ A TU ARTISTA O BANDA MUSICAL FAVORITA!!</h1>
+				<img class="logo" alt="logo" src="../images/logo.png">
+				
 			</div>
 		</div>
 
@@ -34,18 +36,12 @@
 
 						<li class="nav-item"><a class="nav-link"
 							th:href="@{/candidatos/estado_votacion}">Estado votación</a></li>
-
-
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Datos </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item"
+							
+						<li class="nav-item"><a class="nav-link"
 									th:href="@{/candidatos/listaCandidatos}">Candidatos</a></li>
-								<li><a class="dropdown-item" href="#">Otro</a></li>
-								<li><hr class="dropdown-divider"></li>
-							</ul></li>
+
+
+						
 
 					</ul>
 

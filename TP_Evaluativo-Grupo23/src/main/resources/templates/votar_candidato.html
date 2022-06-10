@@ -15,8 +15,8 @@
 			<br>
 			<p class="h4">Edición de Candidato</p>
 			<br>
-
-			<form th:action="@{/candidatos/modificar}" method="POST"
+			
+			<form th:action="@{/candidatos/votar}" method="POST"
 				th:object="${candidato}">
 				<div class="mb-3">
 					<input type="hidden" th:field="*{codigo}" /> <label for="codigoId"
@@ -33,23 +33,21 @@
 				</div>
 
 				<div class="mb-3">
-					<label for="nombre_ArBandId" class="form-label">Nombre de
-						banda/artista</label> <input th:field="*{nombre_ArBand}" type="text"
+					 <input th:field="*{nombre_ArBand}" type="hidden"
 						class="form-control" id="nombre_ArBandId">
 					<div class="text-danger"
 						th:if="${#fields.hasErrors('nombre_ArBand')}"
 						th:errors="*{nombre_ArBand}"></div>
 				</div>
 				<div class="mb-3">
-					<label for="genero_musicalId" class="form-label">Género
-						musical</label> <input th:field="*{genero_musical}" type="text"
+					 <input th:field="*{genero_musical}" type="hidden"
 						class="form-control" id="genero_musicalId">
 					<div class="text-danger" th:if="${#fields.hasErrors('votos')}"
 						th:errors="*{genero_musical}"></div>
 				</div>
 				<div class="mb-3">
-					<label for="descripcionId" class="form-label">Descripción</label> <input
-						th:field="*{descripcion}" type="text" class="form-control"
+					 <input
+						th:field="*{descripcion}" type="hidden" class="form-control"
 						id="descripcionId">
 					<div class="text-danger"
 						th:if="${#fields.hasErrors('descripcion')}"

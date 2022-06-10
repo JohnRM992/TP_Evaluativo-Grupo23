@@ -6,6 +6,7 @@ import fi.unju.edu.ar.util.ListaCandidatos;
 
 public interface ICandidatoService {
 	public ListaCandidatos getListaCandidatos();
+	public ListaCandidatos getVotar();
 	public Candidato getCandidatos();
 	public boolean guardarCandidato(Candidato candidato);
 	public int contarVotos();

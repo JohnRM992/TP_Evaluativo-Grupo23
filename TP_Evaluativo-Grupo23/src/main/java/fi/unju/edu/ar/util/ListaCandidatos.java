@@ -14,8 +14,8 @@ public class ListaCandidatos {
 		candidatos = new ArrayList<Candidato>();
 		//candidato por defecto??
 		
-		candidatos.add(new Candidato(1,1,"Metallica","Rock/Metal","Metallica es una banda estadounidense de thrash metal​ originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983"));
-		candidatos.add(new Candidato(2,1,"AISDUHASIDU","Rock/Metal","ASIDHASI es una banda estadounidense de thrash metal​ originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983"));
+		candidatos.add(new Candidato(1,0,1,"Metallica","Rock/Metal","Metallica es una banda estadounidense de thrash metal​ originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983"));
+		candidatos.add(new Candidato(2,0,1,"Nirvana","Rock/Metal","Nirvana fue una banda de grunge estadounidense procedente de Aberdeen, Washington fundada por el vocalista y guitarrista Kurt Cobain y el bajista Krist Novoselic en 1987"));
 		
 	}
 	public ArrayList<Candidato> getCandidatos(){

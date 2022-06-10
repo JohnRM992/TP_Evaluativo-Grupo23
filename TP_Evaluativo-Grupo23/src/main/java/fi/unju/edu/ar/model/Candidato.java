@@ -6,16 +6,19 @@ import javax.validation.constraints.NotBlank;
 //import javax.validation.constraints.NotEmpty;
 //import javax.validation.constraints.Size;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import fi.unju.edu.ar.util.ListaCandidatos;
+//import fi.unju.edu.ar.util.ListaCandidatos;
 
 @Component
 public class Candidato {
 	
 	@Min(value=1,message="El codigo debe ser mayor o igual a 1")
 	private int codigo;
+	private int codigo2 = 1;
+
+
 	@Min(value=0, message="La cantidad de votos debe ser un numero no negativo")
 	private int votos;
 	@NotBlank(message="El nombre de la banda o artista no puede estar en blanco)")
@@ -30,8 +33,8 @@ public class Candidato {
 	
 
 
-	@Autowired
-	private ListaCandidatos listaCandidatos;
+	//@Autowired
+	//private ListaCandidatos listaCandidatos;
 	//Constructores
 	
 
@@ -40,9 +43,10 @@ public class Candidato {
 		super();
 	}
 	
-public Candidato(int codigo, int votos, String nombre_ArBand, String genero_musical, String descripcion) {
+public Candidato(int codigo, int codigo2,int votos, String nombre_ArBand, String genero_musical, String descripcion) {
 		super();
 		this.codigo = codigo;
+		this.codigo2 = codigo2;
 		this.votos = votos;
 		this.nombre_ArBand = nombre_ArBand;
 		this.genero_musical = genero_musical;
@@ -59,6 +63,15 @@ public Candidato(int codigo, int votos, String nombre_ArBand, String genero_musi
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+	
+	public int getCodigo2() {
+		return codigo2 + 1;
+	}
+
+	public void setCodigo2(int codigo2) {
+		this.codigo2 = codigo2;
+	}
+	
 	public int getVotos() {
 		return votos;
 	}
